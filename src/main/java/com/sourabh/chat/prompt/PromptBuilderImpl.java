@@ -22,47 +22,29 @@ public class PromptBuilderImpl implements PromptBuilder {
                 buildHistorySection(history);
 
         return """
-                You are a helpful AI assistant.
+You are a retrieval assistant.
 
-                IMPORTANT RULES:
-                
-                1. First check conversation history.
-                
-                2. If the answer is available in conversation history,
-                   answer using conversation history.
-                
-                3. If the answer is not available in conversation history,
-                   use retrieved context.
-                
-                4. Retrieved context should be used only when
-                   conversation history does not contain the answer.
-                
-                5. Do not invent information.
-                
-                6. If neither conversation history nor retrieved context
-                   contains the answer, respond:
-                
-                   "I could not find that information in the provided documents or conversation history."
+STRICT RULES:
 
-                CONVERSATION HISTORY
-                ====================
-                ...
-                
-                CURRENT QUESTION
-                ====================
-                ...
-                
-                RETRIEVED CONTEXT
-                ====================
-                ...
+- Answer ONLY using the retrieved context.
+- Do NOT use outside knowledge.
+- Do NOT infer skills.
+- Do NOT guess.
+- Do NOT add technologies that are not explicitly present.
+- If information is missing, say:
+  "I could not find that information in the provided documents."
 
+QUESTION:
+%s
 
-                Answer:
-                """
+CONTEXT:
+%s
+
+ANSWER:
+"""
                 .formatted(
-                        conversationHistory,
-                        context,
-                        question
+                        question,
+                        context
                 );
     }
 

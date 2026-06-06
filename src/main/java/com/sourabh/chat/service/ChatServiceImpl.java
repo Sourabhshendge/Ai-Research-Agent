@@ -2,6 +2,7 @@ package com.sourabh.chat.service;
 
 import com.sourabh.chat.dto.ChatResponseDto;
 import com.sourabh.chat.prompt.PromptBuilder;
+import com.sourabh.chat.rewrite.QueryRewriterService;
 import com.sourabh.common.response.SourceDto;
 import com.sourabh.memory.dto.ConversationMessage;
 import com.sourabh.memory.service.ConversationMemoryService;
@@ -28,6 +29,7 @@ public class ChatServiceImpl implements ChatService {
     private final RetrievalProperties retrievalProperties;
     private final ChatMessageService chatMessageService;
     private final ConversationMemoryService conversationMemoryService;
+    private final QueryRewriterService queryRewriterService;
 
     @Override
     public ChatResponseDto ask(
@@ -43,8 +45,24 @@ public class ChatServiceImpl implements ChatService {
                 question
         );
 
+        String rewrittenQuestion =
+                queryRewriterService.rewrite(
+                        question,
+                        history
+                );
+
         List<SearchResultDto> searchResults =
-                retrieveContext(question);
+                retrieveContext(rewrittenQuestion);
+
+        System.out.println(
+                "Original Question: "
+                        + question
+        );
+
+        System.out.println(
+                "Rewritten Question: "
+                        + rewrittenQuestion
+        );
 
         String promptText =
                 promptBuilder.buildPrompt(
@@ -53,7 +71,9 @@ public class ChatServiceImpl implements ChatService {
                         history
                 );
 
+        System.out.println("========== FINAL PROMPT ==========");
         System.out.println(promptText);
+        System.out.println("==================================");
 
         Prompt prompt = new Prompt(promptText);
 
@@ -100,8 +120,24 @@ public class ChatServiceImpl implements ChatService {
                 question
         );
 
+        String rewrittenQuestion =
+                queryRewriterService.rewrite(
+                        question,
+                        history
+                );
+
         List<SearchResultDto> searchResults =
-                retrieveContext(question);
+                retrieveContext(rewrittenQuestion);
+
+        System.out.println(
+                "Original Question: "
+                        + question
+        );
+
+        System.out.println(
+                "Rewritten Question: "
+                        + rewrittenQuestion
+        );
 
         if (searchResults.isEmpty()) {
 
