@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-research-agent
+
+  profiles:
+    active: local
+
+  mvc:
+    async:
+      request-timeout: 300000
+
+logging:
+  level:
+    root: INFO
