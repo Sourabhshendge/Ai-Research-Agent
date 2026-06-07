@@ -12,6 +12,7 @@ import com.sourabh.document.service.DocumentService;
 import com.sourabh.document.service.FileStorageService;
 import com.sourabh.document.service.TextExtractionService;
 import com.sourabh.document.util.FileHashUtil;
+import com.sourabh.search.service.DocumentIndexingServiceImpl;
 import com.sourabh.vector.service.VectorStoreServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,7 @@ public class DocumentServiceImpl implements DocumentService {
     private final ObjectMapper objectMapper;
     private final VectorStoreServiceImpl vectorStoreService;
     private final FileHashUtil fileHashUtil;
+    private final DocumentIndexingServiceImpl indexingService;
 
     @Override
     public DocumentResponse upload(MultipartFile file) {
@@ -48,9 +50,7 @@ public class DocumentServiceImpl implements DocumentService {
                 );
 
         String fileHash =
-                fileHashUtil.generateSha256(
-                        file
-                );
+                fileHashUtil.generateSha256(file);
 
         if (repository.existsByFileHash(fileHash)) {
 
@@ -70,7 +70,7 @@ public class DocumentServiceImpl implements DocumentService {
                         .uploadedAt(Instant.now())
                         .build();
 
-        Document saved =
+        Document savedDocument =
                 repository.save(document);
 
         List<ChunkDto> chunks =
@@ -84,30 +84,48 @@ public class DocumentServiceImpl implements DocumentService {
                     );
 
             String vectorId =
-                    saved.getId() + "_" + chunk.chunkIndex();
+                    savedDocument.getId()
+                            + "_"
+                            + chunk.chunkIndex();
 
-            DocumentChunk documentChunk =
+            DocumentChunk savedChunk =
                     documentChunkRepository.save(
                             DocumentChunk.builder()
-                                    .document(saved)
-                                    .chunkIndex(chunk.chunkIndex())
-                                    .chunkText(chunk.chunkText())
-                                    .embedding(toJson(embedding))
+                                    .document(savedDocument)
+                                    .chunkIndex(
+                                            chunk.chunkIndex()
+                                    )
+                                    .chunkText(
+                                            chunk.chunkText()
+                                    )
+                                    .embedding(
+                                            toJson(embedding)
+                                    )
                                     .vectorId(vectorId)
                                     .build()
                     );
 
+            /*
+             * Elasticsearch BM25 Index
+             */
+            indexingService.indexChunk(
+                    savedChunk
+            );
+
+            /*
+             * Qdrant Vector Store
+             */
             vectorStoreService.upsertChunk(
                     vectorId,
                     chunk.chunkText(),
-                    saved.getId(),
-                    saved.getFileName(),
+                    savedDocument.getId(),
+                    savedDocument.getFileName(),
                     chunk.chunkIndex(),
                     embedding
             );
         }
 
-        return mapper.toResponse(saved);
+        return mapper.toResponse(savedDocument);
     }
 
     @Override
