@@ -21,7 +21,7 @@ public class RetrievalServiceImpl
     private final RetrievalProperties retrievalProperties;
 
     @Override
-    public List<SearchResultDto> search(
+    public List<SearchResultDto> retrieve(
             String query,
             int topK
     ) {
@@ -35,45 +35,63 @@ public class RetrievalServiceImpl
         List<Document> documents =
                 vectorStore.similaritySearch(request);
 
-        return documents.stream()
 
-                .map(doc ->
-                        SearchResultDto.builder()
-                                .content(doc.getText())
-                                .score(Double.valueOf(doc.getScore()))
-                                .vectorId(
-                                        String.valueOf(
-                                                doc.getMetadata().get("vectorId")
-                                        )
-                                )
-                                .documentId(
-                                        Long.parseLong(
+        List<SearchResultDto> results =
+                documents.stream()
+                        .map(doc ->
+                                SearchResultDto.builder()
+                                        .content(doc.getText())
+                                        .score(Double.valueOf(doc.getScore()))
+                                        .vectorId(
                                                 String.valueOf(
-                                                        doc.getMetadata().get("documentId")
+                                                        doc.getMetadata().get("vectorId")
                                                 )
                                         )
-                                )
-                                .fileName(
-                                        String.valueOf(
-                                                doc.getMetadata().get("fileName")
-                                        )
-                                )
-                                .chunkIndex(
-                                        Integer.parseInt(
-                                                String.valueOf(
-                                                        doc.getMetadata().get("chunkIndex")
+                                        .documentId(
+                                                Long.parseLong(
+                                                        String.valueOf(
+                                                                doc.getMetadata().get("documentId")
+                                                        )
                                                 )
                                         )
-                                )
-                                .build()
-                )
+                                        .fileName(
+                                                String.valueOf(
+                                                        doc.getMetadata().get("fileName")
+                                                )
+                                        )
+                                        .chunkIndex(
+                                                Integer.parseInt(
+                                                        String.valueOf(
+                                                                doc.getMetadata().get("chunkIndex")
+                                                        )
+                                                )
+                                        )
+                                        .build()
+                        )
+                        .toList();
 
-                .filter(result ->
-                        result.getScore() >=
-                                retrievalProperties.minScore()
-                )
 
-                .toList();
+
+
+
+        List<SearchResultDto> filteredResults =
+                results.stream()
+                        .filter(result ->
+                                result.getScore() >=
+                                        retrievalProperties.minScore()
+                        )
+                        .toList();
+
+
+        return filteredResults;
+    }
+
+    @Override
+    public List<SearchResultDto> search(
+            String query,
+            int topK
+    ) {
+        return retrieve(query, topK);
     }
 
     @Override
@@ -82,7 +100,7 @@ public class RetrievalServiceImpl
     ) {
 
         List<SearchResultDto> results =
-                search(question, 5);
+                retrieve(question, 5);
 
         List<RetrievedChunkDto> chunks =
                 results.stream()

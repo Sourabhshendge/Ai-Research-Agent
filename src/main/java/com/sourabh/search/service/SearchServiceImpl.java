@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.elasticsearch.client.elc.NativeQuery;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.SearchHit;
+import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +37,36 @@ public class SearchServiceImpl implements SearchService {
                 .search(searchQuery, DocumentChunkIndex.class)
                 .stream()
                 .map(this::mapToDto)
+                .toList();
+    }
+
+    @Override
+    public List<DocumentChunkIndex> searchChunks(
+            String query,
+            int size
+    ) {
+
+        NativeQuery nativeQuery =
+                NativeQuery.builder()
+                        .withQuery(q ->
+                                q.match(m ->
+                                        m.field("content")
+                                                .query(query)
+                                                .operator(Operator.And)
+                                )
+                        )
+                        .withMaxResults(size)
+                        .build();
+
+        SearchHits<DocumentChunkIndex> hits =
+                elasticsearchOperations.search(
+                        nativeQuery,
+                        DocumentChunkIndex.class
+                );
+
+        return hits.getSearchHits()
+                .stream()
+                .map(SearchHit::getContent)
                 .toList();
     }
 

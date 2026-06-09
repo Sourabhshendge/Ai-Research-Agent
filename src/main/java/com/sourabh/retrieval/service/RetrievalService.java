@@ -15,4 +15,9 @@ public interface RetrievalService {
     RetrievalEvaluationResponse evaluate(
             String question
     );
+
+    List<SearchResultDto> retrieve(
+            String query,
+            int topK
+    );
 }

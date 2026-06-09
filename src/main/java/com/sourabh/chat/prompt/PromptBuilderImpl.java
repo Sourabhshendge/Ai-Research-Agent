@@ -24,23 +24,19 @@ public class PromptBuilderImpl implements PromptBuilder {
         return """
 You are a retrieval assistant.
 
-STRICT RULES:
+Answer only from the provided context.
 
-- Answer ONLY using the retrieved context.
-- Do NOT use outside knowledge.
-- Do NOT infer skills.
-- Do NOT guess.
-- Do NOT add technologies that are not explicitly present.
-- If information is missing, say:
-  "I could not find that information in the provided documents."
+If the answer is not explicitly present in the context, reply exactly:
 
-QUESTION:
+I could not find that information in the provided documents.
+
+Question:
 %s
 
-CONTEXT:
+Context:
 %s
 
-ANSWER:
+Answer:
 """
                 .formatted(
                         question,

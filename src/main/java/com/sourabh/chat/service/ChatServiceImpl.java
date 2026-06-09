@@ -16,6 +16,8 @@ import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import com.sourabh.retrieval.service.HybridSearchService;
+import com.sourabh.retrieval.dto.HybridResultDto;
 
 import java.util.List;
 @Service
@@ -25,6 +27,7 @@ public class ChatServiceImpl implements ChatService {
 
     private final ChatModel chatModel;
     private final RetrievalService retrievalService;
+    private final HybridSearchService hybridSearchService;
     private final PromptBuilder promptBuilder;
     private final RetrievalProperties retrievalProperties;
     private final ChatMessageService chatMessageService;
@@ -185,11 +188,26 @@ public class ChatServiceImpl implements ChatService {
                 );
     }
 
-    private List<SearchResultDto> retrieveContext(String question) {
+    private List<SearchResultDto> retrieveContext(
+            String question
+    ) {
 
-        return retrievalService.search(
-                question,
-                retrievalProperties.topK()
-        );
+        List<HybridResultDto> hybridResults =
+                hybridSearchService.search(
+                        question,
+                        retrievalProperties.topK()
+                );
+
+        return hybridResults.stream()
+                .map(result ->
+                        SearchResultDto.builder()
+                                .documentId(result.documentId())
+                                .chunkIndex(result.chunkIndex())
+                                .content(result.content())
+                                .fileName(result.documentName())
+                                .score(result.score())
+                                .build()
+                )
+                .toList();
     }
 }
