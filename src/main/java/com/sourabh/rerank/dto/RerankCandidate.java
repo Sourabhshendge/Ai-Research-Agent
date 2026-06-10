@@ -9,5 +9,6 @@ public record RerankCandidate(
         String fileName,
         Long documentId,
         Integer chunkIndex,
-        double retrievalScore
+        double retrievalScore,
+        Double rerankScore
 ) {}

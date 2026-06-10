@@ -4,6 +4,7 @@ import com.sourabh.common.response.ApiResponse;
 import com.sourabh.retrieval.dto.HybridResultDto;
 import com.sourabh.retrieval.service.HybridSearchService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,11 @@ public class HybridController {
 
     private final HybridSearchService hybridSearchService;
 
+
+
+    @Value("${rerank.top-k}")
+    private int topK;
+
     @PostMapping("/evaluate")
     public ApiResponse<List<HybridResultDto>>
     evaluate(
@@ -27,7 +33,7 @@ public class HybridController {
         return ApiResponse.success(
                 hybridSearchService.search(
                         query,
-                        20
+                        topK
                 )
         );
     }

@@ -3,7 +3,7 @@ package com.sourabh.rerank.controller;
 import com.sourabh.common.response.ApiResponse;
 import com.sourabh.rerank.dto.RerankRequest;
 import com.sourabh.rerank.dto.RerankResponseDto;
-import com.sourabh.rerank.service.RerankEvaluationService;
+import com.sourabh.rerank.service.RerankPipelineService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,9 @@ import java.util.List;
 @RequestMapping("/api/v1/rerank")
 public class RerankController {
 
-    private final RerankEvaluationService rerankEvaluationService;
+
+
+    private final RerankPipelineService rerankPipelineService;
 
     @PostMapping("/evaluate")
     public ApiResponse<List<RerankResponseDto>> evaluate(
@@ -22,7 +24,7 @@ public class RerankController {
     ) {
 
         return ApiResponse.success(
-                rerankEvaluationService.evaluate(
+                rerankPipelineService.evaluate(
                         request.getQuery()
                 )
         );

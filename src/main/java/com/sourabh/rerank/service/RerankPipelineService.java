@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class RerankEvaluationService {
+public class RerankPipelineService {
 
     private final HybridSearchService hybridSearchService;
     private final RerankerService rerankerService;
