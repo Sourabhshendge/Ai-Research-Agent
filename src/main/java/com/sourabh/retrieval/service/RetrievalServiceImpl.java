@@ -36,6 +36,14 @@ public class RetrievalServiceImpl
                 vectorStore.similaritySearch(request);
 
 
+        System.out.println("========== RAW QDRANT DOCUMENTS ==========");
+
+        documents.forEach(doc -> {
+            System.out.println("Score = " + doc.getScore());
+            System.out.println("Metadata = " + doc.getMetadata());
+            System.out.println("------------------------------------------");
+        });
+
         List<SearchResultDto> results =
                 documents.stream()
                         .map(doc ->
@@ -70,7 +78,18 @@ public class RetrievalServiceImpl
                         )
                         .toList();
 
+        System.out.println("========== MAPPED RESULTS ==========");
 
+        results.forEach(result -> {
+            System.out.println(
+                    "documentId=" + result.getDocumentId()
+                            + ", chunkIndex=" + result.getChunkIndex()
+                            + ", vectorId=" + result.getVectorId()
+                            + ", score=" + result.getScore()
+            );
+        });
+
+        System.out.println("====================================");
 
 
 

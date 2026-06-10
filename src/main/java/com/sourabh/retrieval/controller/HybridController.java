@@ -27,7 +27,7 @@ public class HybridController {
         return ApiResponse.success(
                 hybridSearchService.search(
                         query,
-                        5
+                        20
                 )
         );
     }
