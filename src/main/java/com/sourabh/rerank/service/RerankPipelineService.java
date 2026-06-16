@@ -56,6 +56,9 @@ public class RerankPipelineService {
                                 .retrievalScore(
                                         candidate.retrievalScore()
                                 )
+                                .rerankScore(
+                                        candidate.rerankScore()
+                                )
                                 .build()
                 )
                 .toList();

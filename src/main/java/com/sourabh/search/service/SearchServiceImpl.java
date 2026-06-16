@@ -52,7 +52,7 @@ public class SearchServiceImpl implements SearchService {
                                 q.match(m ->
                                         m.field("content")
                                                 .query(query)
-                                                .operator(Operator.And)
+                                                .operator(Operator.Or)
                                 )
                         )
                         .withMaxResults(size)

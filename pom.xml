@@ -93,6 +93,18 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>tokenizers</artifactId>
+            <version>0.34.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.onnxruntime</groupId>
+            <artifactId>onnxruntime</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+
         <!-- SPRING AI OLLAMA -->
         <dependency>
             <groupId>org.springframework.ai</groupId>

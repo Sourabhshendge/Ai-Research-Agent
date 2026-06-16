@@ -21,8 +21,6 @@ public class HybridController {
 
 
 
-    @Value("${rerank.top-k}")
-    private int topK;
 
     @PostMapping("/evaluate")
     public ApiResponse<List<HybridResultDto>>
@@ -33,7 +31,7 @@ public class HybridController {
         return ApiResponse.success(
                 hybridSearchService.search(
                         query,
-                        topK
+                        20
                 )
         );
     }

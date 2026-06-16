@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What database is used?",
+    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+  },
+  {
+    "question": "Which framework is used?",
+    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+  },
+  {
+    "question": "How is authentication implemented?",
+    "relevantChunkIds": ["2_0", "2_1"]
+  },
+  {
+    "question": "Which search technology is used?",
+    "relevantChunkIds": ["2_0", "2_2"]
+  },
+  {
+    "question": "Which ORM framework is used?",
+    "relevantChunkIds": ["2_0", "2_2"]
+  },
+  {
+    "question": "What caching technology is mentioned?",
+    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+  },
+  {
+    "question": "Which payment gateway was integrated?",
+    "relevantChunkIds": ["2_1"]
+  },
+  {
+    "question": "What architecture pattern is used?",
+    "relevantChunkIds": ["2_0", "2_2"]
+  },
+  {
+    "question": "What degree was completed?",
+    "relevantChunkIds": ["2_3"]
+  },
+  {
+    "question": "Which certifications are mentioned?",
+    "relevantChunkIds": ["2_3"]
+  }
+]

@@ -48,11 +48,26 @@ public class DocumentIndexingServiceImpl
     @Transactional
     public void reindexAll() {
 
+        System.out.println(
+                "Deleting Elasticsearch index documents..."
+        );
+
+        searchRepository.deleteAll();
+
         List<DocumentChunk> chunks =
                 documentChunkRepository
                         .findAllWithDocument();
 
+        System.out.println(
+                "Reindexing chunks: "
+                        + chunks.size()
+        );
+
         indexChunks(chunks);
+
+        System.out.println(
+                "Reindex completed"
+        );
     }
 
     private DocumentChunkIndex map(
