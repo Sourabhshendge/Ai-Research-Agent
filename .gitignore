@@ -78,3 +78,13 @@ tokenizer_config.json
 special_tokens_map.json
 vocab.txt
 config.json
+
+project-structure.txt
+
+evaluation-dataset-v2.json
+
+* text=auto
+*.java text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

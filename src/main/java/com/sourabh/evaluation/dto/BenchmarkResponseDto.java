@@ -12,4 +12,6 @@ public class BenchmarkResponseDto {
     private EvaluationSummaryDto vector;
 
     private EvaluationSummaryDto hybrid;
+
+    private EvaluationSummaryDto hybridRerank;
 }

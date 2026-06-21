@@ -11,4 +11,6 @@ public interface DocumentIndexingService {
     void indexChunks(List<DocumentChunk> chunks);
 
     void reindexAll();
+
+    void deleteDocumentChunks(Long documentId);
 }

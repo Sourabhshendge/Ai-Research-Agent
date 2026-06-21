@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Service;
-
+import org.springframework.ai.vectorstore.SearchRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -36,5 +36,25 @@ public class VectorStoreServiceImpl implements VectorStoreService {
         );
 
         vectorStore.add(List.of(document));
+    }
+
+    @Override
+    public boolean isHealthy() {
+
+        try {
+
+            vectorStore.similaritySearch(
+                    SearchRequest.builder()
+                            .query("health")
+                            .topK(1)
+                            .build()
+            );
+
+            return true;
+
+        } catch (Exception e) {
+
+            return false;
+        }
     }
 }

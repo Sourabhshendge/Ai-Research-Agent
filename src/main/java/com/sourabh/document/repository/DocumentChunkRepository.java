@@ -17,4 +17,14 @@ public interface DocumentChunkRepository
        join fetch dc.document
        """)
     List<DocumentChunk> findAllWithDocument();
+
+    int countByDocumentId(Long documentId);
+
+    void deleteByDocument_Id(Long documentId);
+
+    @Query("""
+       SELECT COUNT(dc)
+       FROM DocumentChunk dc
+       """)
+    Long getTotalChunkCount();
 }

@@ -7,4 +7,6 @@ import java.util.List;
 public interface ChunkingService {
 
     List<ChunkDto> chunk(String text);
+
+
 }

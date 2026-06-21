@@ -44,7 +44,9 @@ public class FileStorageServiceImpl implements FileStorageService {
                     StandardCopyOption.REPLACE_EXISTING
             );
 
-            return target.toString();
+            return target.toAbsolutePath()
+                    .normalize()
+                    .toString();
 
         } catch (IOException ex) {
 
@@ -58,5 +60,32 @@ public class FileStorageServiceImpl implements FileStorageService {
     @Override
     public Path getPath(String filePath) {
         return Paths.get(filePath);
+    }
+
+    @Override
+    public void delete(String path) {
+
+        try {
+
+            Path filePath =
+                    Paths.get(path)
+                            .toAbsolutePath()
+                            .normalize();
+
+            System.out.println("PATH = " + filePath);
+            System.out.println("EXISTS = " + Files.exists(filePath));
+
+            boolean deleted =
+                    Files.deleteIfExists(filePath);
+
+            System.out.println("DELETED = " + deleted);
+
+        } catch (IOException e) {
+
+            throw new RuntimeException(
+                    "Failed to delete file",
+                    e
+            );
+        }
     }
 }

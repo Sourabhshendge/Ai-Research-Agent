@@ -1,42 +1,881 @@
 [
   {
-    "question": "What database is used?",
-    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+    "question": "What framework is used to secure Spring Boot applications?",
+    "relevantChunkIds": ["1_0"],
+    "category": "SECURITY"
   },
   {
-    "question": "Which framework is used?",
-    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+    "question": "What is authentication?",
+    "relevantChunkIds": ["1_0"],
+    "category": "SECURITY"
   },
   {
-    "question": "How is authentication implemented?",
-    "relevantChunkIds": ["2_0", "2_1"]
+    "question": "What is authorization?",
+    "relevantChunkIds": ["1_0"],
+    "category": "SECURITY"
   },
   {
-    "question": "Which search technology is used?",
-    "relevantChunkIds": ["2_0", "2_2"]
+    "question": "What is JWT?",
+    "relevantChunkIds": ["1_0","1_1"],
+    "category": "SECURITY"
   },
   {
-    "question": "Which ORM framework is used?",
-    "relevantChunkIds": ["2_0", "2_2"]
+    "question": "Why are JWT tokens commonly used?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
   },
   {
-    "question": "What caching technology is mentioned?",
-    "relevantChunkIds": ["2_0", "2_1", "2_2"]
+    "question": "What information does a JWT contain?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
   },
   {
-    "question": "Which payment gateway was integrated?",
-    "relevantChunkIds": ["2_1"]
+    "question": "What prevents JWT tampering?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
   },
   {
-    "question": "What architecture pattern is used?",
-    "relevantChunkIds": ["2_0", "2_2"]
+    "question": "What is the purpose of refresh tokens?",
+    "relevantChunkIds": ["1_1","1_2"],
+    "category": "SECURITY"
   },
   {
-    "question": "What degree was completed?",
-    "relevantChunkIds": ["2_3"]
+    "question": "What is RBAC?",
+    "relevantChunkIds": ["1_2"],
+    "category": "SECURITY"
   },
   {
-    "question": "Which certifications are mentioned?",
-    "relevantChunkIds": ["2_3"]
+    "question": "Which roles are mentioned in the authorization strategy?",
+    "relevantChunkIds": ["1_2"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What does the JWT authentication filter do?",
+    "relevantChunkIds": ["1_2","1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "Which password hashing algorithm is used?",
+    "relevantChunkIds": ["1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "Why should passwords not be stored in plain text?",
+    "relevantChunkIds": ["1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What are some common security best practices?",
+    "relevantChunkIds": ["1_4"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How can login attacks be mitigated?",
+    "relevantChunkIds": ["1_4"],
+    "category": "SECURITY"
+  },
+
+  {
+    "question": "What database system is discussed?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "How is data organized in MySQL?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What is the purpose of a primary key?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What is the purpose of a foreign key?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why are indexes used?",
+    "relevantChunkIds": ["2_0","2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What tradeoff can excessive indexing introduce?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What is a transaction?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What does ACID stand for?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why is normalization important?",
+    "relevantChunkIds": ["2_1","2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Which normal forms are mentioned?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What is the purpose of joins?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Which join types are supported?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why is replication used?",
+    "relevantChunkIds": ["2_3"],
+    "category": "DATABASE"
+  },
+
+  {
+    "question": "What is Elasticsearch?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What type of engine is Elasticsearch?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What is an inverted index?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Why are inverted indexes useful?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Which ranking algorithm is used by Elasticsearch?",
+    "relevantChunkIds": ["3_0","3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What factors influence BM25 relevance scoring?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What is a shard?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Why are shards important?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What is the purpose of replicas?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How do replicas improve availability?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What advanced search features are supported?",
+    "relevantChunkIds": ["3_2"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What are common Elasticsearch use cases?",
+    "relevantChunkIds": ["3_2"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How can search results be ranked by relevance?",
+    "relevantChunkIds": ["3_0","3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How can a search engine continue operating after node failures?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+
+  {
+    "question": "Why is Spring Security important in enterprise applications?",
+    "relevantChunkIds": ["1_0"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How does authentication differ from authorization?",
+    "relevantChunkIds": ["1_0"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What problem does JWT solve in distributed systems?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How can a server verify a JWT token?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "Why are JWTs considered stateless?",
+    "relevantChunkIds": ["1_1"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How do refresh tokens improve security?",
+    "relevantChunkIds": ["1_1","1_2"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What happens when a JWT token expires?",
+    "relevantChunkIds": ["1_2"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How does RBAC simplify access management?",
+    "relevantChunkIds": ["1_2"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What responsibility does the JWT authentication filter have?",
+    "relevantChunkIds": ["1_2","1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "Why is BCrypt preferred for password hashing?",
+    "relevantChunkIds": ["1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "What risks arise from storing passwords in plain text?",
+    "relevantChunkIds": ["1_3"],
+    "category": "SECURITY"
+  },
+  {
+    "question": "How can rate limiting help defend login endpoints?",
+    "relevantChunkIds": ["1_4"],
+    "category": "SECURITY"
+  },
+
+  {
+    "question": "Why are primary keys important for data integrity?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "How do foreign keys maintain relationships between tables?",
+    "relevantChunkIds": ["2_0"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "What database operations benefit most from indexing?",
+    "relevantChunkIds": ["2_0","2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why can excessive indexing hurt performance?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why are transactions necessary in databases?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Which ACID property guarantees reliable transactions?",
+    "relevantChunkIds": ["2_1"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "How does normalization reduce redundancy?",
+    "relevantChunkIds": ["2_1","2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why are normal forms applied during database design?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "How do joins combine related data?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "When would a LEFT JOIN be used?",
+    "relevantChunkIds": ["2_2"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "How does replication improve database reliability?",
+    "relevantChunkIds": ["2_3"],
+    "category": "DATABASE"
+  },
+  {
+    "question": "Why is replication important for high availability systems?",
+    "relevantChunkIds": ["2_3"],
+    "category": "DATABASE"
+  },
+
+  {
+    "question": "Why is Elasticsearch suitable for full-text search?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How does an inverted index improve search speed?",
+    "relevantChunkIds": ["3_0"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How does BM25 determine document relevance?",
+    "relevantChunkIds": ["3_0","3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Why is BM25 commonly used in search engines?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How does term frequency influence BM25 scores?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What role do shards play in scalability?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How do shards distribute search workloads?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Why are replicas necessary in Elasticsearch clusters?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How do replicas contribute to fault tolerance?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Which Elasticsearch features support advanced querying?",
+    "relevantChunkIds": ["3_2"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "Why is Elasticsearch popular for log analytics?",
+    "relevantChunkIds": ["3_2"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "How does Elasticsearch maintain availability during node failures?",
+    "relevantChunkIds": ["3_1"],
+    "category": "SEARCH"
+  },
+  {
+    "question": "What is Qdrant?",
+    "relevantChunkIds": ["4_0"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What type of database is Qdrant?",
+    "relevantChunkIds": ["4_0"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "Why are vector databases used in AI applications?",
+    "relevantChunkIds": ["4_0"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What is an embedding?",
+    "relevantChunkIds": ["4_1"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "How are embeddings used for semantic search?",
+    "relevantChunkIds": ["4_1"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "Why are embeddings better than keyword matching for semantic retrieval?",
+    "relevantChunkIds": ["4_1"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What is similarity search?",
+    "relevantChunkIds": ["4_2"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "How does vector similarity search work?",
+    "relevantChunkIds": ["4_2"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "Why can semantically similar text be retrieved even when exact keywords differ?",
+    "relevantChunkIds": ["4_2"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What metadata can be stored alongside vectors?",
+    "relevantChunkIds": ["4_3"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "Why is metadata filtering important in vector search?",
+    "relevantChunkIds": ["4_3"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "How can metadata improve retrieval accuracy?",
+    "relevantChunkIds": ["4_3"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What are the advantages of vector search over traditional search?",
+    "relevantChunkIds": ["4_4"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "When should vector search be preferred over keyword search?",
+    "relevantChunkIds": ["4_4"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "Why are vector databases important for Retrieval-Augmented Generation systems?",
+    "relevantChunkIds": ["4_4"],
+    "category": "VECTOR_SEARCH"
+  },
+  {
+    "question": "What is Retrieval-Augmented Generation?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is Retrieval-Augmented Generation used?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "What problem does RAG solve?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does RAG reduce hallucinations?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "What are the main components of a RAG pipeline?",
+    "relevantChunkIds": ["5_0","5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is document chunking?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is document chunking important in RAG systems?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does chunk size affect retrieval quality?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is semantic chunking?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What role do embeddings play in RAG?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why are embeddings generated for document chunks?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "How are embeddings used during retrieval?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is hybrid retrieval?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why combine BM25 and vector search?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is Reciprocal Rank Fusion?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does Reciprocal Rank Fusion improve retrieval results?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is reranking in a RAG system?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is reranking performed after retrieval?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does a cross encoder improve ranking quality?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is retrieval quality critical for answer generation?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is Retrieval-Augmented Generation?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is Retrieval-Augmented Generation used?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "What problem does RAG solve?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does RAG reduce hallucinations?",
+    "relevantChunkIds": ["5_0"],
+    "category": "RAG"
+  },
+  {
+    "question": "What are the main components of a RAG pipeline?",
+    "relevantChunkIds": ["5_0","5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is document chunking?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is document chunking important in RAG systems?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does chunk size affect retrieval quality?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is semantic chunking?",
+    "relevantChunkIds": ["5_1"],
+    "category": "RAG"
+  },
+  {
+    "question": "What role do embeddings play in RAG?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why are embeddings generated for document chunks?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "How are embeddings used during retrieval?",
+    "relevantChunkIds": ["5_2"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is hybrid retrieval?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why combine BM25 and vector search?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is Reciprocal Rank Fusion?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does Reciprocal Rank Fusion improve retrieval results?",
+    "relevantChunkIds": ["5_3"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is reranking in a RAG system?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is reranking performed after retrieval?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "How does a cross encoder improve ranking quality?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "Why is retrieval quality critical for answer generation?",
+    "relevantChunkIds": ["5_4"],
+    "category": "RAG"
+  },
+  {
+    "question": "What is software architecture?",
+    "relevantChunkIds": ["7_0"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "Why is software architecture important?",
+    "relevantChunkIds": ["7_0"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What are the benefits of a well-designed architecture?",
+    "relevantChunkIds": ["7_0"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "How does architecture impact maintainability?",
+    "relevantChunkIds": ["7_0"],
+    "category": "ARCHITECTURE"
+  },
+
+  {
+    "question": "What is a monolithic architecture?",
+    "relevantChunkIds": ["7_1"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What are the advantages of a monolith?",
+    "relevantChunkIds": ["7_1"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What are the limitations of a monolithic application?",
+    "relevantChunkIds": ["7_1"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "When is a monolithic architecture a good choice?",
+    "relevantChunkIds": ["7_1"],
+    "category": "ARCHITECTURE"
+  },
+
+  {
+    "question": "What is a microservices architecture?",
+    "relevantChunkIds": ["7_2"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "How do microservices differ from monoliths?",
+    "relevantChunkIds": ["7_2"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What benefits do microservices provide?",
+    "relevantChunkIds": ["7_2"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What challenges are introduced by microservices?",
+    "relevantChunkIds": ["7_2"],
+    "category": "ARCHITECTURE"
+  },
+
+  {
+    "question": "What is an API Gateway?",
+    "relevantChunkIds": ["7_3"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "Why is an API Gateway used in microservices?",
+    "relevantChunkIds": ["7_3"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "How does an API Gateway simplify client communication?",
+    "relevantChunkIds": ["7_3"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What responsibilities can an API Gateway handle?",
+    "relevantChunkIds": ["7_3"],
+    "category": "ARCHITECTURE"
+  },
+
+  {
+    "question": "What is scalability in software systems?",
+    "relevantChunkIds": ["7_4"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "Why is scalability important for modern applications?",
+    "relevantChunkIds": ["7_4"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "How can load balancing improve scalability?",
+    "relevantChunkIds": ["7_4"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What techniques are commonly used to scale distributed systems?",
+    "relevantChunkIds": ["7_4"],
+    "category": "ARCHITECTURE"
+  },
+  {
+    "question": "What is Docker?",
+    "relevantChunkIds": ["8_0"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "Why is Docker widely used in software development?",
+    "relevantChunkIds": ["8_0"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "What problem does Docker solve?",
+    "relevantChunkIds": ["8_0"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "How does Docker improve application portability?",
+    "relevantChunkIds": ["8_0"],
+    "category": "CONTAINERIZATION"
+  },
+
+  {
+    "question": "What is a container?",
+    "relevantChunkIds": ["8_1"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "How does a container differ from a virtual machine?",
+    "relevantChunkIds": ["8_1"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "Why are containers considered lightweight?",
+    "relevantChunkIds": ["8_1"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "What advantages do containers provide over traditional deployments?",
+    "relevantChunkIds": ["8_1"],
+    "category": "CONTAINERIZATION"
+  },
+
+  {
+    "question": "What is a Docker image?",
+    "relevantChunkIds": ["8_2"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "How is a Docker image related to a container?",
+    "relevantChunkIds": ["8_2"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "What information is stored inside a Docker image?",
+    "relevantChunkIds": ["8_2"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "Why are Docker images immutable?",
+    "relevantChunkIds": ["8_2"],
+    "category": "CONTAINERIZATION"
+  },
+
+  {
+    "question": "What is Docker Compose?",
+    "relevantChunkIds": ["8_3"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "Why is Docker Compose useful for local development?",
+    "relevantChunkIds": ["8_3"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "How does Docker Compose simplify multi-container applications?",
+    "relevantChunkIds": ["8_3"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "What types of services can be managed using Docker Compose?",
+    "relevantChunkIds": ["8_3"],
+    "category": "CONTAINERIZATION"
+  },
+
+  {
+    "question": "What is Kubernetes?",
+    "relevantChunkIds": ["8_4"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "Why is Kubernetes used in production environments?",
+    "relevantChunkIds": ["8_4"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "How does Kubernetes help manage containerized applications?",
+    "relevantChunkIds": ["8_4"],
+    "category": "CONTAINERIZATION"
+  },
+  {
+    "question": "What benefits does Kubernetes provide for scalability and reliability?",
+    "relevantChunkIds": ["8_4"],
+    "category": "CONTAINERIZATION"
   }
+
 ]

@@ -15,5 +15,9 @@ public class EvaluationSummaryDto {
 
     private double averageNdcg;
 
+    double averageHitRate;
+
+    private double averageMap;
+
     private int totalQuestions;
 }

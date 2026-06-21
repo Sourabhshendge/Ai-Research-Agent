@@ -2,18 +2,24 @@ package com.sourabh.document.service.impl;
 
 import com.sourabh.document.dto.ChunkDto;
 import com.sourabh.document.service.ChunkingService;
+import com.sourabh.search.document.DocumentChunkIndex;
+import com.sourabh.search.repository.DocumentChunkSearchRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ChunkingServiceImpl
         implements ChunkingService {
 
-    private static final int CHUNK_SIZE = 1000;
+    private final DocumentChunkSearchRepository searchRepository;
 
-    private static final int OVERLAP = 200;
+    private static final int CHUNK_SIZE = 300;
+
+    private static final int OVERLAP = 50;
 
     @Override
     public List<ChunkDto> chunk(String text) {
@@ -47,4 +53,5 @@ public class ChunkingServiceImpl
 
         return chunks;
     }
+
 }

@@ -12,4 +12,6 @@ public interface VectorStoreService {
             Integer chunkIndex,
             List<Float> embedding
     );
+
+    boolean isHealthy();
 }

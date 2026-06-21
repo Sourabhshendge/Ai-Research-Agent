@@ -6,6 +6,7 @@
 package com.sourabh.security.jwt;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,21 @@ public class JwtService {
 
     private final JwtProperties jwtProperties;
 
-    public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+    public String extractUsername(
+            String token
+    ) {
+
+        try {
+
+            return extractClaim(
+                    token,
+                    Claims::getSubject
+            );
+
+        } catch (ExpiredJwtException ex) {
+
+            throw ex;
+        }
     }
 
     public <T> T extractClaim(

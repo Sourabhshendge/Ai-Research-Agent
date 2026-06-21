@@ -9,4 +9,6 @@ public interface FileStorageService {
     String store(MultipartFile file);
 
     Path getPath(String filePath);
+
+    void delete(String path);
 }

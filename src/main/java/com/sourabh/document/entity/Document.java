@@ -36,4 +36,11 @@ public class Document {
     @Lob
     @Column(columnDefinition = "LONGTEXT")
     private String extractedText;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private DocumentStatus status;
+
+    @Column(length = 1000)
+    private String failureReason;
 }

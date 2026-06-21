@@ -8,10 +8,27 @@ spring:
   profiles:
     active: local
 
-  mvc:
-    async:
-      request-timeout: 300000
+info:
+  app:
+    name: AI Research Agent
+    version: 1.0.0
+    description: Production RAG Platform
 
-logging:
-  level:
-    root: INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+
+  health:
+    rabbit:
+      enabled: false
+
+  endpoint:
+    health:
+      show-details: always
+
+  info:
+    env:
+      enabled: true

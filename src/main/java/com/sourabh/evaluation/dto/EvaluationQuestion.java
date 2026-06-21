@@ -11,4 +11,5 @@ public class EvaluationQuestion {
 
     private List<String> relevantChunkIds;
 
+    private QuestionCategory category;
 }

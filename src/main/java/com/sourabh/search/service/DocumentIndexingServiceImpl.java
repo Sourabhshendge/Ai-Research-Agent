@@ -95,4 +95,17 @@ public class DocumentIndexingServiceImpl
                 )
                 .build();
     }
+
+    @Override
+    public void deleteDocumentChunks(
+            Long documentId
+    ) {
+
+        List<DocumentChunkIndex> chunks =
+                searchRepository.findByDocumentId(
+                        documentId
+                );
+
+        searchRepository.deleteAll(chunks);
+    }
 }
